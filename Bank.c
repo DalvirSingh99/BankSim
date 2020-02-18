@@ -1,6 +1,7 @@
 #include "Bank.h"
 
 Bank *Bank_new(int numAccounts, int initialBalance) {
+//Construtor which creates the bank
     Bank *b = (Bank *)malloc(sizeof(Bank));
     b->initialBalance = initialBalance;
     b->numAccounts = numAccounts;
@@ -21,9 +22,13 @@ void Bank_destroy(Bank *b) {
 }
 
 void Bank_open(Bank *b) {
+    //Goes through all the accounts
+    
     for(int i = 0; i < b->numAccounts; ++i) {
+        
         TransferThreadParameters *params = TransferThreadParameters_new(b, i, b->initialBalance);
         pthread_create(&b->accounts[i]->thread, NULL, transfer_thread, params);
+        
     }
 
     for(int i = 0; i < b->numAccounts; ++i) {
@@ -45,6 +50,7 @@ void Bank_transfer(Bank *b, int from, int to, int amount) {
 }
 
 void Bank_test(Bank *b) {
+    
     int sum = 0;
 
     for(int i = 0; i < b->numAccounts; ++i) {

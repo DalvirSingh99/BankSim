@@ -9,6 +9,7 @@ typedef struct Account {
     int balance;
     int id;
     pthread_t thread;
+    pthread_mutex_t lock;
 } Account;
 
 typedef struct Bank {
@@ -23,6 +24,8 @@ typedef struct TransferThreadParameters {
     Bank *b;
     int fromAccount;
     int maxAmount;
+    
 } TransferThreadParameters;
+
 
 #endif

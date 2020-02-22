@@ -10,6 +10,7 @@ typedef struct Account {
     int id;
     pthread_t thread;
     pthread_mutex_t lock;
+    pthread_cond_t cond1;
 } Account;
 
 typedef struct Bank {

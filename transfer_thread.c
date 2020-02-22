@@ -22,7 +22,7 @@ void *transfer_thread(void *vargp) {
     //For 1000 iterations
     int i = 0;
     
-    for(i = 0; i < 10000; ++i) {
+    for(i = 0; i < 1000; ++i) {
         
         //Put money to random account in the bank
         int toAccount = (int)(rand() % b->numAccounts);

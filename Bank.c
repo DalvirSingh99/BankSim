@@ -31,9 +31,9 @@ void Bank_open(Bank *b) {
         
     }
 
-    for(int i = 0; i < b->numAccounts; ++i) {
-        pthread_join(b->accounts[i]->thread, NULL);
-    }
+//    for(int i = 0; i < b->numAccounts; ++i) {
+//        pthread_join(b->accounts[i]->thread, NULL);
+//    }
     
     Bank_test(b);
 
@@ -42,7 +42,7 @@ void Bank_open(Bank *b) {
 
 void Bank_transfer(Bank *b, int from, int to, int amount) {
     // Uncomment line when race condition in Bank_test() has been resolved.
-    // if(Bank_shouldTest(b)) Bank_test(b);
+//     if(Bank_shouldTest(b)) Bank_test(b);
 
     if(Account_withdraw(b->accounts[from], amount)) {
         Account_deposit(b->accounts[to], amount);

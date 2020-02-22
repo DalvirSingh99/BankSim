@@ -17,6 +17,7 @@ void Account_deposit(Account *a, int amount) {
     pthread_mutex_lock(&a->lock);
     int newBalance = a->balance + amount;
     a->balance = newBalance;
+    printf("Signaled all the waiting threads\n");
     pthread_cond_broadcast(&a->cond1);
     pthread_mutex_unlock(&a->lock);
 }
@@ -26,14 +27,15 @@ int Account_withdraw(Account *a, int amount) {
     if(amount <= a->balance) {
         int newBalance = a->balance - amount;
         a->balance = newBalance;
-//        printf("Account %d waiting for signal", a->id);
+
         pthread_mutex_unlock(&a->lock);
         return 1;
     } else {
         while(1){
+            printf("Account %d waiting for signal\n", a->id);
             pthread_cond_wait(&a->cond1, &a->lock);
         }
-        
+        pthread_mutex_unlock(&a->lock);
         return 0;
     }
     

@@ -30,6 +30,7 @@ void *transfer_thread(void *vargp) {
         //Transfer the funds
         Bank_transfer(b, fromAccount, toAccount, amount);
     }
+    Bank_destroy(b);
     
     printf("Account[%d] is done.\n", fromAccount); 
 }

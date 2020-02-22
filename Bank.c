@@ -35,7 +35,7 @@ void Bank_open(Bank *b) {
 
 //    for(int i = 0; i < b->numAccounts; ++i) {
 //        pthread_join(b->accounts[i]->thread, NULL);
-//    }
+//    } 
     
     Bank_test(b);
 

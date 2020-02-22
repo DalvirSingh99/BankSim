@@ -30,8 +30,9 @@ int Account_withdraw(Account *a, int amount) {
         pthread_mutex_unlock(&a->lock);
         return 1;
     } else {
-        printf("Account %d waiting for signal\n", a->id);
-        pthread_cond_wait(&a->cond1, &a->lock);
+        while(1){
+            pthread_cond_wait(&a->cond1, &a->lock);
+        }
         
         return 0;
     }

@@ -5,7 +5,7 @@ Account *Account_new(int id, int initialBalance) {
     a->id = id;
     a->balance = initialBalance;
     a->lock = (pthread_mutex_t) PTHREAD_MUTEX_INITIALIZER;
-    a->cond1 =(pthread_cond_t) PTHREAD_COND_INITIALIZER;
+    a->cond1= (pthread_cond_t) PTHREAD_COND_INITIALIZER;
     return a;
 }
 
@@ -17,7 +17,7 @@ void Account_deposit(Account *a, int amount) {
     pthread_mutex_lock(&a->lock);
     int newBalance = a->balance + amount;
     a->balance = newBalance;
-    pthread_cond_signal(&a->cond1);
+    pthread_cond_broadcast(&a->cond1);
     pthread_mutex_unlock(&a->lock);
 }
 

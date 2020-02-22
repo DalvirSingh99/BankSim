@@ -7,6 +7,8 @@ Bank *Bank_new(int numAccounts, int initialBalance) {
     b->numAccounts = numAccounts;
     b->ntransacts = 0;
     b->accounts = (Account **)malloc(numAccounts * sizeof(Account *));
+    b->cond2 = (pthread_cond_t) PTHREAD_COND_INITIALIZER;
+    b->lock = (pthread_mutex_t) PTHREAD_MUTEX_INITIALIZER;
     for(int i = 0; i < numAccounts; ++i) {
         b->accounts[i] = Account_new(i, initialBalance);
     }
@@ -52,7 +54,6 @@ void Bank_transfer(Bank *b, int from, int to, int amount) {
 void Bank_test(Bank *b) {
     
     int sum = 0;
-
     for(int i = 0; i < b->numAccounts; ++i) {
         pthread_t currentThreadId = pthread_self();
         Account *currAccount = b->accounts[i];

@@ -23,7 +23,6 @@ void *transfer_thread(void *vargp) {
     int i = 0;
     
     for(i = 0; i < 1000; ++i) {
-        
         //Put money to random account in the bank
         int toAccount = (int)(rand() % b->numAccounts);
         //Put random amount into the random account

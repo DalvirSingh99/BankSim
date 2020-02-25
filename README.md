@@ -22,14 +22,13 @@ The goal of the assignment is to gain a better understanding of multithreading p
 
 **Desired Tests:**
 
-**Test Insights**
-We did manual testings many times to check the result is correct. 
+**Test Insights**  
+We did manual testings many times to check the result is correct. We also wrote printf statements to check the flow of the program.  
 
-**Team Work**
+**Team Work**  
+*Overall contribution*: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having.  
 - Shunsuke Omura: Task 1 and Task 3
 - Dalvir Singh: Task 2, Task 4, and Task 5  
- **Overall contribution**: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having. 
-
 ---
 ## UML
 ![UML](https://github.com/DalvirSingh99/BankSim/blob/Shunsuke_Omura/RaceCondition.png)

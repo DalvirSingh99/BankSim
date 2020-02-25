@@ -21,9 +21,10 @@ The goal of the assignment is to gain a better understanding of multithreading p
 - Task 5: Initially, a deadlock occurred when a specific transfer thread finished all the desired transactions. The previous solution to task 4 assumes that the account will eventually get enough balance but when a thread finishes, this statement no longer becomes valid. Therefore a dead lock occurs, since threads are waiting for the balance to change but it won't anymore. Our solution to this problem was to stop all the transfer threads when one thread finished all the transactions. We created a open variable in the Bank structure which would indicate if the bank was open for transactions or not. In the constructor, it is initially set to 1, meaning open for transactions. When one transfer thread finishes all the transactions, we set the bank open variable to 0, meaning bank is closed and loop through all the account threads to shut them down. Also, we had to make sure to put a lock on the Bank close method so multiple threads do not try to close the bank at the same time or they will try to access threads that have already been shut down or in the process of being shut down. 
 
 **Desired Tests:**
+Since this lab uses multi threads, it is difficult to make a test code. The best way is to test manually and check the result value.
 
 **Test Insights**  
-We did manual testings many times to check the result is correct. We also wrote printf statements to check the flow of the program.  
+We did manual testings to check the result value is correct. We also wrote printf statements to check the flow of the program.  
 
 **Team Work**  
 *Overall contribution*: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having.  

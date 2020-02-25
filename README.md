@@ -20,3 +20,22 @@ The goal of the assignment is to gain a better understanding of multithreading p
 - Task 4: Initially, if the amount someone wants to withdraw is greater than the current balance, then the program does nothing. We modified the code such that, if the amount the account wants to withdraw is greater, than that specific account is put into a blocked state through the use of "pthread_cond_wait()". When any amount of money gets deposited to that account, all the threads that were blocked due to low balance of that account gets signaled to wake up through "pthread_cond_broadcast()". Inside the threads, each thread inside the withdraw function checks if the balance is enough to withdraw and does the same thing. 
 - Task 5: Initially, a deadlock occurred when a specific transfer thread finished all the desired transactions. The previous solution to task 4 assumes that the account will eventually get enough balance but when a thread finishes, this statement no longer becomes valid. Therefore a dead lock occurs, since threads are waiting for the balance to change but it won't anymore. Our solution to this problem was to stop all the transfer threads when one thread finished all the transactions. We created a open variable in the Bank structure which would indicate if the bank was open for transactions or not. In the constructor, it is initially set to 1, meaning open for transactions. When one transfer thread finishes all the transactions, we set the bank open variable to 0, meaning bank is closed and loop through all the account threads to shut them down. Also, we had to make sure to put a lock on the Bank close method so multiple threads do not try to close the bank at the same time or they will try to access threads that have already been shut down or in the process of being shut down. 
 
+**Desired Tests:**
+
+
+**Test Insights**
+-While developing the tests, we found many flaws in our logics which we addressed to resolve the failing tests. 
+Furthermore, when doing this project we believed the best approach was for one person to implement something and write all the neccessary tests for that functionality. So if one of us implmented the progressive rate strategy, he will also have to develop the corresponding tests to make sure everything works as expected. Most of the tests were written after the code so we did not follow the TDD process because we found it more efficient to create the code first and modify the code accordingly as we got feedback from the tests. 
+
+**Team Work**
+
+ 
+ **Overall contribution**: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having. 
+
+---
+## UML
+![UML](https://github.com/DalvirSingh99/BankSim/blob/Shunsuke_Omura/RaceCondition.png)
+## Explanation
+The race condition occurs in the original code because accounts are not protected and multiple threads change their balance at the same time. In order to resolve the race condition, we need to add protection to lock each account when one of the threads is executing the transfer and release the lock when the execution is done. 
+
+

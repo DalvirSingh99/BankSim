@@ -45,6 +45,9 @@ void Bank_open(Bank *b) {
 
 void Bank_transfer(Bank *b, int from, int to, int amount) {
     // Uncomment line when race condition in Bank_test() has been resolved.
+    if(!b->open){
+        return;
+    }
     if(Bank_shouldTest(b)) BankTester(b);
     
     
@@ -85,6 +88,7 @@ void Bank_close(Bank *b) {
         int i = 0;
         for (int i = 0; i < b->numAccounts; ++i) {
             printf("Closed Account %d\n", b->accounts[i]->id);
+            
             pthread_cancel(b->accounts[i]->thread);
         }
         printf("Bank is Closed\n");

@@ -1,6 +1,6 @@
 #include "Bank.h"
 
-#define NACCOUNTS 100
+#define NACCOUNTS 10
 #define INITIAL_BALANCE 10000
 
 int main() {

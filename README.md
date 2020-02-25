@@ -35,4 +35,4 @@ We did manual testings to check the result value is correct. We also wrote print
 ## UML
 ![UML](https://raw.githubusercontent.com/DalvirSingh99/BankSim/Task3/RaceCondition_InitialVersion.png)
 ## Explanation
-The race condition occurs in the original code because accounts are not protected and multiple threads change their balance at the same time. In order to resolve the race condition, we need to add protection to lock each account when one of the threads is executing the transfer and release the lock when the execution is done. 
+The race condition occurs in the original code because accounts are not protected and multiple threads change their balance at the same time. In order to resolve the race condition, we need to add protection to lock each account when one of the threads is executing the transfer and release the lock when the execution is done. The test method is involked after task 3 when the withdraw and deposite transaction threads are all blocked. The should test method tests the status and if it true, create a thread to which calls the test method. Once it is done, send signals to all threads blocked.

@@ -31,8 +31,6 @@ We did manual testings many times to check the result is correct. We also wrote 
 - Dalvir Singh: Task 2, Task 4, and Task 5  
 ---
 ## UML
-![UML](https://github.com/DalvirSingh99/BankSim/blob/Shunsuke_Omura/RaceCondition.png)
+![UML](https://raw.githubusercontent.com/DalvirSingh99/BankSim/Task3/RaceCondition_InitialVersion.png)
 ## Explanation
 The race condition occurs in the original code because accounts are not protected and multiple threads change their balance at the same time. In order to resolve the race condition, we need to add protection to lock each account when one of the threads is executing the transfer and release the lock when the execution is done. 
-
-

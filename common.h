@@ -10,6 +10,7 @@ typedef struct Account {
     int id;
     pthread_t thread;
     pthread_mutex_t lock;
+    pthread_cond_t cond1;
 } Account;
 
 typedef struct Bank {
@@ -18,6 +19,8 @@ typedef struct Bank {
     long ntransacts;
     int ntransactsInProgress;
     Account **accounts;
+    int open;
+    pthread_mutex_t lock;
 } Bank;
 
 typedef struct TransferThreadParameters {

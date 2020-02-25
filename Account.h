@@ -4,6 +4,6 @@
 
 Account *Account_new(int id, int initialBalance);
 void Account_destroy(Account *a);
-void Account_deposit(Account *a, int amount);
-int Account_withdraw(Account *a, int amount);
+void Account_deposit(Bank *b, Account *a, int amount);
+int Account_withdraw(Bank *b, Account *a, int amount);
 #endif

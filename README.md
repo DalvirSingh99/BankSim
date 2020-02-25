@@ -40,4 +40,4 @@ The race condition occurs in the original code because accounts are not protecte
 ## Modified (after task 3)
 ![UML](https://raw.githubusercontent.com/DalvirSingh99/BankSim/Task3/RaceCondition_InitialVersion.png)
 ### Explanation
-The test method is involked after task 3 when transfer threads are all blocked. This prevents the transfer threads and testing threads to acceesss a global variable simultanuously. The should_test method tests the status and if it is true, create a thread to calls the test method. Once it is done, send signals to all threads blocked.
+The test method is involked after task 3 when transfer threads are all blocked. This prevents the transfer threads and testing threads to acceesss a global variable simultanuously. The should_test method tests the status and if it is true, create a thread to calls the test method (Bank_test in the uml). Once it is done, send signals to all threads blocked.

@@ -23,9 +23,11 @@ The goal of the assignment is to gain a better understanding of multithreading p
 **Desired Tests:**
 
 **Test Insights**
+We did manual testings many times to check the result is correct. 
 
 **Team Work**
-
+- Shunsuke Omura: Task 1 and Task 3
+- Dalvir Singh: Task 2, Task 4, and Task 5  
  **Overall contribution**: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having. 
 
 ---

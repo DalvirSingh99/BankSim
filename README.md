@@ -12,3 +12,8 @@ The goal of the assignment is to gain a better understanding of multithreading p
 - The initial code does not allow an account to transfer out fund if the transferring amount is greater than the account balance. Implement a wait/notify solution to defer the transfer until the account balance becomes greater than the transferring amount (assume some the account will receive the fund later).
 
 - Deadlock condition may occur (very rare) if one thread finishes all the fund transfers and exit. Implement a solution in which all thread stop fund transferring (bank is close) whenever one tread completes its fund transfers. This will solve the deadlock condition issue.
+
+**Implementations to accomplish each task**
+- Task 1: We created a UML to show the race condition
+- Task 2: In the account struct, we included a mutex lock. Each time a transfer was occuring, the program would lock that specific account until the transfer was completed. We lock the specific account inside the withdraw and deposit functions. 
+- Task 3: 

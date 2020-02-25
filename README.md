@@ -28,8 +28,9 @@ We did manual testings to check the result value is correct. We also wrote print
 
 **Team Work**  
 *Overall contribution*: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having.  
-- Shunsuke Omura: Task 1 - Draw a UML sequence diagram to explain why the race condtion occurs; Task 3 - Race condition occurs because the transfer threads and the testing thread are running at the same time. Added mutex lock and wait/signal to make sure they do not access simultanuously. 
-- Dalvir Singh: Task 2 - Added mutex locks on the account when one thread is working on withdraw ro deposite; Task 4 - Added pthread condition wait and signal on the account when it has not enough money. When it gets money from other accounts, send signal to stop blocking the thread; Task 5 - 
+- Shunsuke Omura: Task 1 - Draw a UML sequence diagram to explain why the race condtion occurs; Task 2 - Added mutex locks on the account when one thread is working on withdraw ro deposite; 
+- Dalvir Singh: Task 3 - Race condition occurs because the transfer threads and the testing thread are running at the same time. Added mutex lock and wait/signal to make sure they do not access simultanuously. Task 4 - Added pthread condition wait and signal on the account when it has not enough money. When it gets money from other accounts, send signal to stop blocking the thread; Task 5 - 
+- Task 2, Task 3- Shunsuke got help from Dalvir. We both worked on this part since it was difficult.
 ---
 ## UML
 ![UML](https://raw.githubusercontent.com/DalvirSingh99/BankSim/Task3/RaceCondition_InitialVersion.png)

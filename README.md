@@ -22,14 +22,10 @@ The goal of the assignment is to gain a better understanding of multithreading p
 
 **Desired Tests:**
 
-
 **Test Insights**
--While developing the tests, we found many flaws in our logics which we addressed to resolve the failing tests. 
-Furthermore, when doing this project we believed the best approach was for one person to implement something and write all the neccessary tests for that functionality. So if one of us implmented the progressive rate strategy, he will also have to develop the corresponding tests to make sure everything works as expected. Most of the tests were written after the code so we did not follow the TDD process because we found it more efficient to create the code first and modify the code accordingly as we got feedback from the tests. 
 
 **Team Work**
 
- 
  **Overall contribution**: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having. 
 
 ---

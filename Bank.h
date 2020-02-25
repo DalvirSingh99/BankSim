@@ -9,7 +9,8 @@ Bank *Bank_new(int numAccounts, int initialBalance);
 void Bank_destroy(Bank *b);
 void Bank_open(Bank *b);
 void Bank_transfer(Bank *b, int from, int to, int amount);
-void Bank_test(Bank *b);
+void *Bank_test(Bank *b);
+void BankTester(Bank *b);
 int Bank_shouldTest(Bank *b);
 void Bank_close(Bank *b);
 

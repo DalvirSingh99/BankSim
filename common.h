@@ -21,6 +21,9 @@ typedef struct Bank {
     Account **accounts;
     int open;
     pthread_mutex_t lock;
+    pthread_cond_t stopthreads;
+    pthread_cond_t startthreads;
+    int stop;
 } Bank;
 
 typedef struct TransferThreadParameters {

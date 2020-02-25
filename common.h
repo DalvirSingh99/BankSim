@@ -19,6 +19,8 @@ typedef struct Bank {
     long ntransacts;
     int ntransactsInProgress;
     Account **accounts;
+    int open;
+    pthread_mutex_t lock;
 } Bank;
 
 typedef struct TransferThreadParameters {

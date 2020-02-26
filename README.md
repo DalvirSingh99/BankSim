@@ -28,9 +28,11 @@ We did manual testings to check the result value is correct. We also wrote print
 
 **Team Work**  
 *Overall contribution*: The work was designed to be evenly split so one person did not have more on his plate than the other. Also we had open discussions to address any problems one may be having.  
-- Shunsuke Omura: Task 1 - Draw a UML sequence diagram to explain why the race condtion occurs; Task 2 - Added mutex locks on the account when one thread is working on withdraw ro deposite; 
-- Dalvir Singh: Task 3 - Race condition occurs because the transfer threads and the testing thread are running at the same time. Added mutex lock and wait/signal to make sure they do not access simultanuously. Task 4 - Added pthread condition wait and signal on the account when it has not enough money. When it gets money from other accounts, send signal to stop blocking the thread; Task 5 - 
-- Task 2, Task 3- Shunsuke got help from Dalvir. We both worked on this part since it was difficult.
+
+- Shunsuke Omura worked on Task 1 - Draw a UML sequence diagram to explain why the race condtion occurs and contributed to Task 2 Adding the mutex locks on the account when one thread is working on withdraw or deposit. Contributed to the solution for Task 3 and drew another UML diagram. 
+- Dalvir Singh: Collaborated with Shunsuke Omura on Task 3 since it was difficult because of the Race condition that occurred when the transfer threads and the testing thread are running at the same time. Added mutex lock and wait/signal to make sure they do not access simultanuously. Completed Task 4 by adding pthread condition wait and signal on the account when it has not enough money while leveraging a mutex lock on the bank. When it gets money from other accounts, send signal to stop blocking the thread. Also, completed task 5 to close the bank by creating a close variable in bank struct and then creating a bank close method that signaled the bank has closed and shuts down all the transaction threads. 
+
+- Overall- We had to calloborate on the assignment together since we had to have full understanding of the other person's code in order to not break what the other person had done. Therefore, we sat together worked on all the tasks individually where needed and collaborated on difficult parts when needed. 
 ---
 ## UML
 ## Original (before task 3)
